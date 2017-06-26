@@ -1,0 +1,90 @@
+#friend_list {
+	border-top : 2px solid rgba(241,92,62,0.7);
+	border-bottom : 2px solid rgba(241,92,62,0.7);
+	white-space : nowrap;
+	overflow-x : scroll;
+	width : 100vw;
+	height : auto;
+	padding-top : 2vh;
+	padding-bottom : 2vh;
+}	
+#friend_list::-webkit-scrollbar {
+	height : 5px;
+}
+
+#friend_list > div {
+	cursor : pointer;
+	position : relative;
+	background-color : #ff5c26;
+	display : inline-block;
+	height : 230px;
+	width : 240px;
+	margin-left : 4%;
+	border-radius : 5px;
+	box-shadow : 0px 2px 5px rgba(0,0,0,0.25);
+}
+
+
+#friend_list > #friend_none {
+	font-size : 19px;
+	padding-left : 20px;
+	color : #f15c3e;
+}
+
+#friend_list > div > .friend_name {
+	text-align : center;
+	color : #202020;
+	padding-top : 30px;
+	height : calc( 50% - 30px );
+	font-size : 20px;
+	width : 100%;
+}
+
+#friend_list > div img {
+	width : 80px;
+	height : 80px;
+	border-radius : 50px;
+	border : 4px solid white;
+	position : absolute;
+	top : 70px;
+	left : calc( 50% - 43px );
+}
+
+#friend_list > div > .friend_level {
+	margin-top : 60px;
+	color : white;
+	font-size : 19px;
+	text-align : center;
+	width : 100%;
+}
+
+@media screen and ( min-width : 1501px ){
+	#friend_list > div {
+		width : 12%;
+	}
+}
+
+@media screen and ( max-width : 1500px ){
+	#friend_list > div {
+		width : 15.2%;
+	}
+}
+
+@media screen and ( max-width : 1200px ){
+	#friend_list > div {
+		width : 20%;
+	}
+}
+
+@media screen and ( max-width : 900px ){
+	#friend_list > div {
+		width : 28%;
+	}
+}
+
+@media screen and ( max-width : 600px ){
+	#friend_list > div {
+		width : 44%;
+	}
+}
+

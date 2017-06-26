@@ -1,0 +1,228 @@
+#head {
+	background-color : #f15c3e;
+	border-bottom :0px;
+	-moz-box-shadow : 0px 3px 5px rgba(0,0,0,0.1);
+	-webkit-box-shadow : 0px 3px 5px rgba(0,0,0,0.1);
+	box-shadow : 0px 3px 5px rgba(0,0,0,0.1);
+	display : block;
+	position : relatvie;
+	z-index : 100;
+	width : 99vw;
+	position : fixed;
+	height : 34px;
+	padding : 4px 0 4px 1vw;
+}
+
+#head #head_logo {
+	cursor : pointer;
+	width : 30px;
+	position : absolute;
+	margin-top : 8px;
+	left : calc( 50vw - 15px ); 
+}
+
+#head #head_menu {
+	position : absolute;
+	left : 0;
+	top : 42px;
+	width : 100vw;
+	background-color : white;
+	-moz-box-shadow : 0px 3px 5px rgba(0,0,0,0.1);
+	-webkit-box-shadow : 0px 3px 5px rgba(0,0,0,0.1);
+	box-shadow : 0px 3px 5px rgba(0,0,0,0.1);
+}
+
+#head #head_menu a {
+	display : block;
+	width : calc( 100vw - 30px );
+	margin : -1px 15px 0px 15px;
+	border : 1px 0 0 0 solid black;
+	font-size : 15px;
+	text-decoration : none;
+	color : #f15c3e;
+	border-top : 1px solid rgba(241,92,62,.5);
+}
+
+#head #head_menu a img {
+	width : 20px;
+	padding : 9px 5px 11px 10px;
+	vertical-align : middle;
+}
+
+#head #search {
+	margin-top : 2px;
+	font-family : 'NanumGothicL';
+	background-color : #ff3d00;
+	position : absolute;
+	background : url('/img/search_icon.png') no-repeat;
+	background-color : white;
+	background-position : 381px 5px;
+	background-size : 20px 20px;
+	border : 0px;
+	padding : 5px 34px 5px 8px;
+	border-radius : 2px;
+	font-size : 15px;
+	width : 370px;
+}
+
+#head #search:focus {
+	outline : none;
+}
+
+#head #search_result {
+	position : absolute;
+	top : 38px;
+	display : none;
+	width : 410px;
+	background-color : white;
+	border : 1px solid rgba( 0, 0, 0, .1 );
+	box-shadow : 0 2px 2px -2px rgba( 0, 0, 0, .42 );
+	z-index : 100;
+	margin-left : auto;
+	left : 0;
+}
+
+#search_result a {
+	text-decoration : none;
+	color : #ff3d00;
+	font-weight : bold;
+	margin-bottom : 1px;
+}
+
+#search_result #search_none {
+	text-align : center;
+	padding : 28px;
+	padding-bottom : 27px;
+	font-weight : bold;
+	font-size : 20px;
+	color : #ff3d00;
+}
+
+#search_result #search_none:hover {
+	background-color : #f15c3e;
+	color : white;
+}
+
+#search_result div:hover, #search_result div:active {
+	background-color : #f15c3e;
+	color : white;
+}
+
+#search_result img {
+	background-color : white;
+	width : 50px;
+	height : 50px;
+	vertical-align : middle;
+	padding : 3px;
+	border : 1px solid rgba( 0, 0, 0, 0.3 );
+	margin-right : 8px;
+	border-radius : 50px;
+}
+
+#search_result div {
+	margin : 10px;
+	padding : 10px;
+	padding-left : 15px;
+	font-size : 20px;
+}
+
+#search_result a:after {
+	cursor : default;
+	content : "";
+	margin-top : -10px;
+	margin-left : 10px;
+	margin-right : 10px;
+	padding-top : 10px;
+	display : block;
+	border-bottom : 1px solid #dedede;
+}
+
+#search_result a:last-child:after {
+	display : none;
+}
+#head #search, #head #search_result {
+//	left : calc( 100vw - 450px );
+	right : 2vw;
+}
+	
+#profileimg_head {
+	vertical-align : bottom;
+	position : absolute;
+	top : 1px;
+	left : 0px;
+	border-radius : 20px;
+	width : 30px;
+	height : 30px;
+}
+
+#head .navi_menu {
+	cursor : pointer;
+	font-size : 14px;
+	color : white;
+	text-decoration : none;
+	top : 7px;
+	padding : 8px 0px 7px 0px;
+	position : relatvie;
+	margin : 3px 2px 3px 3px;
+	position : relative;
+}
+
+#head #notice {
+	display : inline-block;
+	padding : 2px 6px 2px 28px;
+	background : url('/img/notice_icon.png')  no-repeat;
+	background-position : 6px 0px;
+	background-size : 16px 18px;
+}
+
+#head #notice::after {
+	display : none;
+}
+
+
+#head .navi_menu:hover {
+	background : rgba(0, 0, 0, .1);
+	border-radius : 2px;
+}
+
+#notice_box {
+	position : absolute;
+	left : 30px;
+	top : 42px;
+	box-shadow : 0px 2px 5px rgba(0,0,0,.2);
+	
+}
+
+@media screen and ( min-width : 675px ) {
+	#head {
+		width : 100vw;
+	}
+}
+
+@media screen and ( max-width : 980px ) {
+	#head #search {
+		width : calc( 50vw - 80px );
+		background-position : calc( 90vw ) 5px;
+	}
+	#head #search_result{
+		width : calc( 50vw - 40px );
+	}
+	#head #search_none{
+		font-size : 18px;
+		padding : 10px;
+	}
+}
+
+@media screen and ( max-width : 600px ) {
+	#head #search_result {
+		top : 42px;
+		width : calc( 100vw );
+		margin : 0px;
+	}
+}
+
+@media screen and ( max-width : 310px ) {
+	#search::-webkit-input-placeholder { color : white; }
+	#search::-moz-placeholder { display : white; } 
+	#search:-ms-input-placeholder { display : white; }
+}

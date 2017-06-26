@@ -1,0 +1,60 @@
+::-webkit-scrollbar {
+	width : 8px;
+	height : 18px;
+}
+
+::-webkit-scrollbar-thumb:vertical:active {
+	background-color : rgba(0, 0, 0, .3);
+}
+
+::-webkit-scrollbar-thumb {
+	background-clip : padding-box;
+	-webkit-border-radius : 8px;
+	-webkit-box-shadow : inset -1px -1px 0px rgba(0, 0, 0, 0.05), inset 1px 1px 0px rgba(0, 0, 0, 0.05);
+	background-color : rgba(0, 0, 0, .2);
+}
+
+::-webkit-scrollbar-track-piece:start{
+}
+
+::-webkit-scrollbar-track-piece:end{
+}
+
+@font-face {
+	font-family : 'NanumGothicL';
+	src : url('/font/NanumGothicUL.woff'),
+		url('/font/NanumGothicUL.otf');
+}
+
+
+html{
+	width : 100%;
+}
+
+body{
+	font-family : 'NanumGothicL';
+	margin : 0px;
+	padding : 0px;
+	overflow-x : hidden;
+	width : 100%;
+	background-color : #f2f2f2;
+}
+
+textarea {
+	resize : none;
+}
+
+#toast {
+	position : absolute;
+	bottom : 10vh;
+	left : 15vw;
+	padding : 2vh 0 2vh 0;
+	width : 70vw;
+	background-color : #313131;
+	color : white;
+	opacity : 0;
+	text-align : center;
+	border-radius : 3px;
+}
+
+

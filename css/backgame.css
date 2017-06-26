@@ -1,0 +1,46 @@
+#wave1{
+display: block; 
+position: relative; 
+-webkit-user-select: none; 
+height: 128px; 
+overflow-x: auto; 
+overflow-y: hidden;
+}
+
+#canvas1{
+position: absolute; 
+z-index: 1; 
+top: 0px; 
+bottom: 0px; 
+width: 870px;
+}
+
+#wave2{
+position: absolute;
+z-index: 2; 
+top: 0px; 
+bottom: 0px; 
+overflow: hidden; 
+width: 100%; 
+display: block; 
+box-sizing: border-box; 
+}
+
+#timeline1{
+display: block; 
+position: relative; 
+-webkit-user-select: none; 
+height: 20px; width: 100%; 
+overflow: hidden
+}
+
+#canvas2{
+position: absolute; 
+z-index: 4; 
+width: 870px; 
+height: 20px;
+}
+
+input{
+margin-left:5px;
+}

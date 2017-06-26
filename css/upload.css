@@ -1,0 +1,74 @@
+body {
+	overflow-y : hidden;
+}
+
+#name {
+	padding-top : 60px;
+	padding-bottom : 10px;
+	border-bottom : 1px solid #f15c3e;
+	color : #f15c3e;
+	font-size : 20px;
+	text-align : center;
+	width : calc( 100vw - 30px );
+	margin : auto;
+	font-weight : bold;
+	display : block;
+}
+
+#helper {
+	display : inline-block;
+	vertical-align : middle;
+	width : 0;
+	height: calc( 100vh + 350px );
+}
+
+form {
+	text-align : center;
+	display : inline-block;
+	margin-left : calc( 50vw - 151px );
+}
+
+
+form label {
+	height : 250px;
+	display : block;
+	cursor : pointer;
+	border-radius : 2px;	
+	text-align : center;
+	margin-bottom : 5vh;
+}
+
+form label img {
+	width : 250px;
+	height : 100%;
+}
+
+form input {
+	background-color : transparent;
+	display : block;
+	border : 0;
+	border-bottom : 1px solid #f15c3e;
+	width : 300px;
+	padding : 1vh 0 4px 0;
+	font-size : 18px;
+	margin : auto;
+	margin-bottom : 4vh;
+	text-align : center;
+	font-family: 'NanumGothicL';
+	font-weight : bold;
+}
+
+form input:focus {
+	outline : none;
+}
+
+form #send { 
+	cursor : pointer;
+	background-color : #f15c3e;
+	width : 250px;
+	padding-top : 2vh;
+	padding-bottom : 2vh;
+	color : white;
+	border-radius : 2px;
+	margin : auto;
+}

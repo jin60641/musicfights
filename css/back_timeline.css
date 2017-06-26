@@ -1,0 +1,854 @@
+@-webkit-keyframes fade_post {
+	from { 
+		opacity : 0; 
+	} to {
+		opacity : 1; 
+	}
+}
+
+@-o-keyframes fade_post {
+	from { 
+		opacity : 0; 
+	} to { 
+		opacity : 1; 
+	}
+}
+@-moz-keyframes fade_post {
+	from {
+		opacity : 0; 
+	} to { 
+		opacity : 1; 
+	}
+}
+@keyframes fade_post {
+	from { 
+		opacity : 0; 
+	}
+	to { 
+		opacity : 1; 
+	}
+}
+
+html {
+	width : 100%;
+}
+
+body {
+	overflow-x : hidden;
+	width : 100%;
+	background-color : #e9eaed;
+}
+
+textarea {
+	-webkit-appearance : none;
+}
+
+#post_wrap {
+	padding : 10px;
+	padding-top : 42px;
+	height : calc( 100vh - 55px );
+}
+
+#post_wrap > .post {
+	margin-left:300px;
+
+	//box-shadow : 2px 2px 3px rgba(0,0,0,0.05);
+	//margin : auto;
+
+	font-family : 'NanumGothicL';
+	word-wrap : break-word;
+	white-space : pre;
+	background-color : white;
+	position : relative;
+	font-size : 14px;
+	width : 620px;
+	border : 1px solid;
+	border-color : #e5e6e9 #dfe0e4 #d0d1d5;
+	border-radius : 3px;
+	padding : 10px;
+	display : block;
+	margin-top : 10px;
+	padding-bottom : 0px;
+	transition : opacity .3s linear;
+}
+
+#post_wrap .post #post_write {
+	margin-left : 4px;
+	border-top : 1px solid rgba(0,0,0,0.2);
+	border-bottom : 1px solid rgba(0,0,0,0.2);
+	border-left : 0px;
+	border-right : 0px;
+	border-radius : 0px;
+	overflow-y : hidden;
+	display : block;
+	font-size : 14px;
+	width : 608px;
+	height : 100px;
+	vertical-align : top;
+	padding-left : 3px;
+	padding-top : 5px;
+}
+
+#post_wrap > .post > .post_name {
+	color : #34a798;
+	text-decoration : none;
+	font-size : 18px;
+	font-weight : bold;
+	font-family : 'NanumGothicL';
+}
+
+#post_wrap > #write {
+	padding-bottom : 50px;
+}
+
+.post .postimg {
+	max-height : 600px;
+	display : block;
+	max-width : 100%;
+	margin-top : 10px;
+	border : 1px solid #e1e2e3;
+}
+
+.post .postimg:hover {
+	cursor : pointer;
+}
+
+
+.post > .date {
+	position : relative;
+	font-size : 16px;
+}
+
+.post > .date::before {
+	content : " | ";
+}
+
+#post_wrap .date {
+	line-height : 22px;
+	color : #9197a3;
+}
+
+#post_wrap .date img {
+	position : absolute;
+	top : -4px;
+	right : 0px;
+	filter : grayscale(100%);
+	-webkit-filter : grayscale(100%);
+	display : inline;
+}
+
+.reply .date {
+	font-size : 12px;
+}
+
+
+.reply .writereply {
+	border : 1px solid #c8c8c8;
+	letter-spacing : 0.5px;
+	margin-left : 11px;
+	width : 530px;
+	margin-top : 1px;
+	height : 15px;
+	overflow : hidden;
+	padding : 9px 34px 9px 5px;
+}
+
+#post_wrap .writereply:focus {
+	outline : 0;
+}
+
+
+.replyinput_label {
+	position : absolute;
+	right : 5px;
+	display : none;
+	width : 23px;
+	height : 23px;
+	top : 7px;
+	background : url('/img/imageupload_reply.jpg') right no-repeat;
+	background-size : 26px 26px;
+}
+
+.writereply:hover + .replyinput_label {
+	display:block;
+} 
+
+.writereply:focus + .replyinput_label {
+	display : block;
+} 
+
+.replyinput_label:hover {
+	cursor : pointer;
+	display : block;
+}
+
+
+.post > .postmenubtn {
+	background : url('/img/dropdown.png');
+	position : absolute;
+	right : 10px;
+	top : 10px;
+	font-size : 12px;
+	background-size : 17px 17px;
+	width : 17px;
+	height : 17px;
+}
+
+.post > .postmenubtn:hover {
+	cursor : pointer;
+}
+
+
+
+#post_wrap .post #post_write:focus {
+	outline : 0;
+	border-top : 1px solid rgb(86, 210, 199);
+	border-bottom : 1px solid rgb(86, 210, 199);
+}
+
+#post_wrap .post #post_file_label {
+	margin-right : 14px;
+	margin-top : 8px;
+	width : 32px;
+	height : 33px;
+	float : right;
+	background : url('/img/imageupload.jpg');
+	background-size : 32px 33px;
+}
+
+#post_wrap .post #post_file_label:hover {
+	cursor : pointer;
+}
+
+#output_post {
+	width : 616px;
+	white-space : nowrap;
+	height : auto;
+	overflow-x : hidden;
+	overflow-y : hidden;
+	margin-top : 16px;
+	margin-bottom : -16px;
+}
+
+.post_imgbox {
+	padding : 3px;
+	border : 2px solid rgba(40,180,180,.42);
+	width : 82px;
+	height : 82px;
+	margin-left : 4px;
+	margin-right : 5px;
+	position : relative;
+	display : inline-block;
+	margin-bottom : 7px;
+}
+
+.delete_postimg {
+	cursor : pointer;
+	background : url('/img/deletebtn.png') no-repeat;
+	background-size : 18px;
+	top : 3px;
+	right : 3px;
+	width : 18px;
+	height : 18px;
+	position : absolute;
+	display : none;
+}
+
+.post_imgbox:hover .delete_postimg {
+	display : block;
+}
+
+#post_wrap .post #post_file {
+	display : none;
+}
+
+
+#post_wrap .post .profileimg_post {
+	width : 50px;
+	height : 50px;
+	display : inline;
+	border  : 1px solid rgba(0, 0, 0, .1);
+	background : white;
+	border-radius : 25px;
+	vertical-align : middle;
+	margin-right : 10px;
+}
+
+#post_wrap .post .profileimg_reply {
+	background : white;
+	border-radius : 18px;
+	width : 35px;
+	height : 35px;
+	display : inline;
+	border : 1px solid rgba(0, 0, 0, .1);
+	vertical-align : top;
+}
+
+.post .replywrap {
+	border-top : 1px solid #e1e2e3;
+	//margin : -10px;
+	margin-top : 9px;
+	padding-top : 10px;
+	//background-color : #f6f7f8;
+	font-size : 13px;
+}
+
+.post .replywrap input[type="file"] {
+	display : none;
+}
+
+.post .reply {
+	position : relative;
+	margin-bottom : 7px;
+}
+
+.post .reply .reply_menu_btn {
+	display : none;
+	width : 15px;
+	position : absolute;
+	right : 0px;
+	height : 15px;
+	background-size : 15px 15px;
+	background-repeat : no-repeat;
+}
+
+.post .reply:hover .reply_menu_btn {
+	display : block;
+}
+
+.post .reply .reply_menu_btn:hover {
+	cursor : pointer;
+	display : block;
+}
+
+.post .replywrap .reply_more {
+	//background : url('/img/replymore.png') no-repeat ;
+	line-height : 11px;
+	//padding-left : 13px;
+	padding-bottom : 3px;
+	color : #34a798;
+	cursor : pointer;
+	font-family : 'NanumGothicL';
+	margin-bottom : 5px;
+}
+
+.post .reply .reply_text {
+	font-size : 14px;
+	display : inline-block;
+	line-height : 16px;
+	white-space : pre;
+	word-wrap :  break-word;
+	margin-left : 6px;
+	width : 520px;
+}
+
+
+.post .reply .reply_text img {
+	margin-top : 10px;
+	max-width : 100%;
+	max-height : 200px;
+}
+
+.post .replywrap .reply a {
+	text-decoration : none;
+	color : #34a798;
+	font-weight : bold;
+	font-family : 'NanumGothicL';
+	margin-right : 5px;
+}
+
+.post .replywrap .reply a:hover {
+	text-decoration : underline;
+}
+
+.post .replywrap .replyoutput {
+	position : relative;
+	text-align : right;
+	border-top : 0px;
+	display : none;
+	margin-bottom : 10px;
+}
+
+.post .replywrap .replyoutput .delete_replyimg {
+	position : absolute;
+	top : 1px;
+	right : 1px;
+	background : #000000 url('/img/delete_replyimg.jpg');
+	opacity : 0.5;
+	width : 60px;
+	height : 60px;
+	display : none;
+}
+
+.post .replywrap .replyoutput .replyoutput_img {
+	padding : 5px;
+	border : 1px solid #c8c8c8;
+	width : 50px;
+	height : 50px;
+}
+
+.post .replywrap .replyoutput img:hover + .delete_replyimg {
+	cursor : pointer;
+	display : block;
+}
+
+.post .replywrap .replyoutput .delete_replyimg:hover {
+	cursor : pointer;
+	display : block;
+}
+
+.reply_menu {
+	z-index : 200;
+	background-color : white;
+	display : none;
+	border-radius : 3px;
+	box-shadow : 0 3px 8px rgba(0,0,0,0.2);
+	border : 1px solid rgba(0,0,0,0.15);
+	position : absolute;
+	right : 0px;
+	top : 16px;
+	padding : 8px;
+}
+
+.reply_menu div {
+	padding : 8px;
+}
+
+.reply_menu div : hover {
+	cursor : pointer;
+	color : #ffffff;
+	background-color : rgb(86, 210, 199);
+}
+
+.post_menu {
+	background-color : white;
+	display : none;
+	border-radius : 3px;
+	box-shadow : 0 3px 8px rgba(0,0,0,0.2);
+	border : 1px solid rgba(0,0,0,0.15);
+	position : absolute;
+	right : 8px;
+	padding-top : 8px;
+	top : 30px;
+	z-index : 200;
+}
+	
+.post_menu div {
+	padding : 8px;
+	margin : 8px;
+	margin-top : 0px;
+}
+
+.post_menu div:hover {
+	cursor : pointer;
+	color : #ffffff;
+	background-color : rgb(86, 210, 199);
+}
+
+.post > #post_write_button {
+	margin-right : 4px;
+	margin-top : 8px;
+	width : 60px;
+	height : 33px;
+	background : url('/img/postwrite.jpg');
+	background-size : 60px 33px;
+	float : right;
+}
+	
+.post .post_inside {
+	padding : 9px 10px 3px 10px;
+}
+
+.post .post_inside a {
+	text-decoration : none;
+	color : black;
+}
+
+.post .post_inside > span > a:hover {
+	color : #34a798;
+}
+
+.post .post_inside .link_preview {
+	display : block;
+	margin-top : 10px;
+	padding-bottom : 5px;
+	box-shadow : 0 0 0 1.5px rgba(0, 0, 0, .1) inset, 0 1px 1px rgba(0, 0, 0, .05);
+	white-space : pre-line;
+}
+
+.post .post_inside .link_preview:visited {
+	color : black;
+}
+
+.post .post_inside .link_preview_img_big {
+	width : 100%;
+}
+
+.post .post_inside .link_preview_img_small {
+	vertical-align:top;
+	height : 100%;
+	width : 150px;
+	height : 150px;
+}
+
+.post .post_inside iframe {
+	border : 0px;
+	width : 100%;
+	min-height : 35vh;
+}
+
+.post .post_inside .link_preview_text_small {
+	width : calc( 100% - 170px );
+	display : inline-block;
+}
+
+.post .post_inside .link_preview div {
+	margin : 10px;
+}
+
+.post .post_inside .link_preview_title {
+	padding-left : 5px;
+	font-size : 21px;
+}
+
+.post .post_inside .link_preview_description {
+	font-size : 15px;
+}
+
+.post .post_inside .link_preview_site_name {
+	font-size : 13px;
+}
+
+.post .post_inside .output_change {
+	width : 616px;
+	white-space : nowrap;
+	height : auto;
+	overflow-x : hidden;
+	overflow-y : hidden;
+	margin-top : 16px;
+}
+
+.post .post_inside textarea {
+	border-top : 1px solid rgba(0,0,0,0.2);
+	border-bottom : 1px solid rgba(0,0,0,0.2);
+	border-left : 0px;
+	border-right : 0px;
+	border-radius : 0px;
+	overflow-y : hidden;
+	display : block;
+	font-size : 14px;
+	width : 100%;
+	height : 100px;
+	vertical-align : top;
+	padding-left : 3px;
+	padding-top : 5px;
+}
+
+.post .post_inside textarea:focus {
+	outline : none;
+	border-top : 1px solid rgb(86, 210, 199);
+	border-bottom : 1px solid rgb(86, 210, 199);
+}
+
+#post_wrap .post #post_write_button:hover {
+	cursor : pointer;
+}
+
+#post_wrap .post .post_inside .post_change_file {
+	display : none;
+}
+
+#post_wrap .post .post_inside .post_change_label {
+	//margin-top : 13px;
+
+	margin-right : 14px;
+	width : 32px;
+	height : 33px;
+	float : right;
+	background : url('/img/imageupload.jpg');
+	background-size : 32px 33px;
+}
+
+#post_wrap .post .post_inside .post_change_label:hover {
+	cursor : pointer;
+}
+
+#post_wrap .post .post_change_button {
+	width : 60px;
+	height : 33px;
+	background : url('/img/postwrite.jpg') no-repeat;
+	background-size : 60px 33px;
+	margin-right : -5px;
+	float : right;
+}
+
+#post_wrap .post .post_change_button {
+	cursor : pointer;
+}
+
+#post_wrap > .post > .post_span {
+	color : #34a798;
+	font-size : 18px;
+	cursor : pointer;
+	font-weight : bold;
+	font-family :  'NanumGothicL';
+	padding-left : 23px;
+	margin-left : 7px;
+	padding-top : 4px;
+	padding-bottom : 4px;
+	background : url('/img/postimg.jpg') no-repeat;
+	background-size : 22px 25px;
+}
+
+#post_wrap > .post > .post_span > img {
+	display : inline;
+}
+
+#post_wrap > .post .post_changed {
+	position : relative;
+	font-size : 16px;
+	color : #9197a3;
+}
+	
+#post_wrap > .post .post_changed:before {
+	content : " · ";
+}
+
+#post_wrap > .post .post_changed:hover {
+	cursor : pointer;
+}
+
+#post_wrap > .post > .post_favorite {
+	position : relative;
+}
+
+#post_wrap > .post > .post_favorite > img {
+	position : absolute;
+	top : -4px;
+	left : 6px;
+	width : 20px;
+	height : 20px;
+}
+
+#imglayer {
+	height : 100%;
+	position : fixed !important;
+	top : 0;
+	visibility : hidden;
+	opacity : 0;
+	transition : opacity 0.4s linear;
+	z-index : 200;
+	width : 100%;
+	text-align : center;
+	background-color : rgba(0,0,0,0.6)
+}
+
+#imglayer #imgbox {
+	white-space : nowrap;
+	z-index : 300;
+	display : inline-block;
+	position : relative;
+	margin-left : -17px;
+
+	width : 70%;
+	height : 80%;
+	top : 10%;
+	vertical-align : middle;
+	text-align : center;
+}
+
+#imglayer #leftbtn, #imglayer #rightbtn {
+	z-index : 700;
+	position : absolute;
+	width : 100px;
+	top : 0px;
+	height : 100%;
+}
+
+#imglayer #lefthover, #imglayer #righthover {
+	z-index : 700;
+	width : 100px;
+	height : 100%;
+	position : absolute;
+}
+
+#imglayer #righthover {
+	right : 0px;
+}
+
+#imglayer #leftbtn {
+	background : rgba(0,0,0,0.5) url("/img/leftbtn.png") no-repeat 25px center;
+	transition : left .5s;
+	left : -100px;
+}
+
+#imglayer #lefthover:hover + #leftbtn, #imglayer #leftbtn:hover {
+	background : rgba(0,0,0,0.5) url("/img/leftbtn_hover.png") no-repeat 25px center;
+	left : 0px;
+	cursor : pointer;
+}
+
+#imglayer #rightbtn {
+	background : rgba(0,0,0,0.5) url("/img/rightbtn.png") no-repeat center center;
+	right : -100px;
+	transition : right .5s;
+}
+
+#imglayer #righthover:hover + #rightbtn, #imglayer #rightbtn:hover {
+	background : rgba(0,0,0,0.5) url("/img/rightbtn_hover.png") no-repeat center center;
+	cursor : pointer;
+	right : 0px;
+}
+
+#imglayer #imgbox img {
+	z-index : 500;
+	border : 10px solid white;
+	background-color : white;
+	max-width : 100%;
+	max-height : 100%;
+	margin-left : 12px;
+	display : none;
+	vertical-align : middle;
+}
+
+#imglayer > #imgmenuhover {
+	z-index : 700;
+	width : 100%;
+	height : 100px;
+	position : absolute;
+	bottom : 0px;
+	opacity : 0;
+}
+
+#imglayer > #imgmenu {
+	text-align : left;
+	z-index : 700;
+	height : 100px;
+	position : absolute;
+	bottom : -100px;
+	transition : bottom .5s;
+	background-color : rgba(0,0,0,0.7);
+}
+
+#imglayer > #imgmenu img {
+	width : 60px;
+	height : 60px;
+	margin : 22.5px;
+	margin-left : 40px;
+	margin-right : 18px;
+}
+
+#imglayer > #imgmenu img:last-child {
+	margin-right : 40px;
+}
+
+#imglayer > #imgmenu img:hover {
+	cursor : pointer;
+}
+
+#imglayer #imgmenuhover:hover + #imgmenu, #imglayer #imgmenu:hover {
+	bottom : 0px;
+}
+
+#imglayer #imgbox img:hover {
+	cursor : pointer;
+}
+
+#imglayer > #imgbox > #helper {
+	vertical-align : middle;
+	display : inline-block;
+	width : 0;
+	height : 100%;
+}
+
+@media screen and ( max-width : 1259px ){
+	#post_wrap > .post {
+		margin : auto;
+		margin-top : 10px;
+	}
+}
+
+@media screen and ( max-width : 669px ){
+	html {
+	}
+	#body {
+		width : calc( 100vw );
+	}
+	#post_wrap {
+		width : calc( 100vw - 20px );
+	}
+	#post_wrap > .post {
+		width : calc( 100% - 20px );
+	}
+	#post_wrap > .post .reply_text {
+		width : calc( 100vw - 140px );
+	}
+	#post_wrap > .post #post_write {
+		width : calc( 100vw - 68px );
+	}
+	#post_wrap > .post .reply > img {
+		width : 30px;
+		height : 30px;
+	}
+	#post_wrap > .post .writereply {
+		width : calc( 100% - 85px );
+	}
+	#post_wrap > .post #output_post {
+		width : calc( 100% - 41px );
+	}
+	#post_wrap > .post .post {
+		max-height : 100vw;
+	}
+	#imglayer {
+		background : rgba(0,0,0,.8);
+	}
+	#imglayer #imgbox {
+		top : 0px;
+		left : 0px;
+		width : 100vw;
+		height : 100vh;
+		background : 0;
+	}
+	#imglayer #imgbox img {
+		border : 0;
+	}
+	#post_wrap > .post .post_name {
+		font-size : 18px;
+	}
+	#post_wrap > .post > .post_name > img {
+		width : 40px;
+		height : 40px;
+		margin-right : 5px;
+	}
+	#post_wrap > .post > .post_span {
+		font-size : 16px;
+		background-size : 18px 23px;
+		margin-left : 5px;
+		padding-left : 20px;
+	}
+}
+
+@media screen and ( max-width : 500px ){
+	#post_wrap > .post .post_name {
+		font-size : 17px;
+	}
+	#post_wrap > .post .date {
+		font-size : 15px;
+	}
+	.post .post_inside .link_preview_img_small {
+		vertical-align : initial;
+		width : calc(100%);
+	}
+	.post .post_inside .link_preview_text_small {
+		display : initial;
+	}
+}
+
+@media screen and ( max-width : 400px ){
+	#post_wrap > .post .post_name {
+		font-size : 15px;
+	}
+	#post_wrap > .post .date {
+		font-size : 14px;
+	}
+}

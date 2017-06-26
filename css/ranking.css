@@ -1,0 +1,33 @@
+#ranklist {
+	padding-top : 60px;
+}
+
+#ranklist div {
+	display : inline-block;
+	color : #f15c3e;
+	font-weight : bold;
+}
+#ranklist .name {
+	cursor : pointer;
+
+}
+#ranklist div img {
+	border-radius : 100px;
+	vertical-align : middle;
+	border : 5px solid #f15c3e;
+	width : 90px;
+	height : 90px;
+	max-width : 20vw;
+	max-height : 20vw;
+	margin : 10px 2vw 10px 1vw;
+}
+
+#ranklist .score {
+	margin-left : 2vw;
+}
+
+@media screen and ( max-width : 300px ) {
+	#ranklist {	
+		font-size : 12px;
+	}
+}
